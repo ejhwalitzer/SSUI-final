@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New workout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body class="container">
+  <h1> Create your workout here </h1>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="new-workout.js"></script>
+	<form id="workout-creation-form" class="form-horizontal" role="form">
+	  <div class="form-group">
+	    <label class="control-label">Workout Title:</label>
+	      <input type="text" class="form-control" id="workout-title">
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label">Exercise 1:</label>
+	      <input type="text" class="form-control">
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label">Category:</label>
+        <div class="dropdown">
+          <button id="category-dropdown" class="btn btn-primary dropdown-toggle" 
+                   type="button" data-toggle="dropdown" 
+                   aria-haspopup="true" aria-expanded="false">Pick one! 
+                   <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a class="dropdown-item" 
+                  onclick="categoryPicked('Strength Training')">
+                  Strength Training</a></li>
+            <li><a class="dropdown-item" 
+                   onclick="categoryPicked('Cardio')">
+                   Cardio</a></li>
+            <li><a class="dropdown-item" 
+                   onclick="categoryPicked('Calisthenics')">
+                   Calisthenics</a></li>
+          </ul>
+      </div>
+	  </div>
+<!--     <div class="form-group">
+    <button class="btn btn-info btn-sm form-control" onclick="clearWorkout">
+      Add exercise</button>
+    </div> -->
+	</form>
+  <div id="buttons">
+    <button id="save-button" type="button" class="btn btn-success" onclick="saveWorkout()">Save</button>
+    <button id="cancel-button" type="button" class="btn btn-default" onclick="clearWorkout()">Clear</button>
+  </div>
+    <div id="back-button">
+    <a href="dashboard.html" class="btn btn-default">
+    Back</a>
+  </div>
+  </body>
+</html>
