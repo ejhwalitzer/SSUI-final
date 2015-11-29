@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Workout Dashoboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+    <link rel="stylesheet" href="buttons/css/buttons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="dashboard.js"></script>
+  <script type="text/javascript" src="buttons/js/buttons.js"></script>
+  <div class="container-fluid" style="background-color:lightgrey; height:100%">
+  <div class="header">
+    <h1 id="headerText" style="color:white;">Workout planner</h1>
+  </div>
+   <div class="row-fluid">
+    <div id="workout-container" class="span6">
+      <div id="workout-header" style="color:white">WORKOUTS</div>
+      <div id="workout-list"></div>
+      <a id="add-workout-button" onclick="transitionAnim()" class="button button-rounded button-flat-primary"><i class="fa fa-pencil-square-o"></i> add workout</a>
+    </div>
+    <div id="planner" class="span6">
+      <table id="planner-table" class="table table-curved">
+        <thead>
+          <tr style="background-color: #1bbc9c; height: 50px">
+            <th style="text-align:center; border-top-left-radius:10px; color: white; vertical-align: middle;">DAY</th>
+            <th style="text-align:center; color: white; vertical-align: middle;">WORKOUTS</th>
+            <th style="text-align:center; border-top-right-radius:10px; color: white; vertical-align: middle;">DONE?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" style="text-align:center; vertical-align: middle;">Sunday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-sun" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false"> Pick one
+                         <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons0" class="status-buttons" style="text-align:center"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align:center;vertical-align: middle;">Monday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-mon" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false"> Pick one
+                         <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons1" class="status-buttons" style="text-align:center;"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align:center; vertical-align: middle;">Tuesday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-tues" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false"> Pick one
+                         <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons2" class="status-buttons" style="text-align:center;"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align:center; vertical-align: middle;">Wednesday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-wed" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false">Pick one
+                         <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons3" class="status-buttons" style="text-align:center;"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align:center; vertical-align: middle;">Thursday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-thurs" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false">Pick one
+                         <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons4" class="status-buttons" style="text-align:center;"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align:center; vertical-align: middle;">Friday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-fri" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false">Pick one
+                         <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons5" class="status-buttons" style="text-align:center;"></td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align:center; vertical-align: middle;">Saturday</th>
+            <td>
+              <div class="dropdown text-center">
+                <button class="button button-rounded button-small button-flat-primary" 
+                         type="button" id="dropdown-sat" data-toggle="dropdown" 
+                         aria-haspopup="true" aria-expanded="false"> Pick one
+                        <i class="fa fa-caret-down"></i>
+                </button>
+                </div>
+            </td>
+            <td id="status-buttons6" class="status-buttons" style="text-align:center;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>
